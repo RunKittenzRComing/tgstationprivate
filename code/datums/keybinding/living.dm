@@ -138,39 +138,39 @@
 	M.toggle_move_intent()
 	return TRUE
 
-/datum/keybinding/living/toggle_run_intent
-	hotkey_keys = list("Shift")
-	name = "toggle_run_intent"
-	full_name = "Hold to run"
-	description = "Hold to run, release to stop running."
-	keybind_signal = COMSIG_KB_LIVING_TOGGLEMOVEINTENT_DOWN
+/datum/keybinding/living/toggle_walk_intent
+	hotkey_keys = list("Unbound")
+	name = "toggle_walk_intent"
+	full_name = "Hold to walk"
+	description = "Hold to walk, release to stop walking."
+	keybind_signal = COMSIG_KB_LIVING_TOGGLEWALKINTENT_DOWN
 
-/datum/keybinding/living/toggle_run_intent/down(client/user)
+/datum/keybinding/living/toggle_walk_intent/down(client/user)
 	. = ..()
 	if(.)
 		return
 	var/mob/living/M = user.mob
-	M.toggle_run_intent()
+	M.toggle_walk_intent()
 	return TRUE
 
 /datum/keybinding/living/toggle_run_intent/up(client/user)
 	var/mob/living/M = user.mob
-	M.toggle_run_intent()
+	M.toggle_walk_intent()
 	return TRUE
 
-/datum/keybinding/living/toggle_run_intent_alternative
+/datum/keybinding/living/toggle_walk_intent_alternative
 	hotkey_keys = list("Unbound")
-	name = "toggle_run_intent_alt"
-	full_name = "Press to cycle running"
-	description = "Press to cycle running, does not cycle back."
-	keybind_signal = COMSIG_KB_LIVING_TOGGLERUNINTENTALT_DOWN
+	name = "toggle_walk_intent_alt"
+	full_name = "Press to cycle walking"
+	description = "Press to cycle walking, does not cycle back."
+	keybind_signal = COMSIG_KB_LIVING_TOGGLEWALKINTENTALT_DOWN
 
-/datum/keybinding/living/toggle_run_intent_alternative/down(client/user)
+/datum/keybinding/living/toggle_walk_intent_alternative/down(client/user)
 	. = ..()
 	if(.)
 		return
 	var/mob/living/M = user.mob
-	M.toggle_run_intent()
+	M.toggle_walk_intent()
 	return TRUE
 
 /datum/keybinding/living/toggle_move_intent_alternative
